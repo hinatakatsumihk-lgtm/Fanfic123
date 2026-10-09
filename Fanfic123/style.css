@@ -1,0 +1,137 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --latar: #1d2230;
+  --kotak: #2a3144;
+  --teks: #e9e6df;
+  --aksen: #e0b46a;
+  --aksen-gelap: #3a4360;
+  --merah: #c62828;
+  --merah-hover: #e53935;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--latar);
+  color: var(--teks);
+  font-family: Georgia, "Times New Roman", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Kotak cerita dengan sudut tumpul */
+.kotak {
+  width: 100%;
+  max-width: 640px;
+  min-height: 400px;
+  background: var(--kotak);
+  border-radius: 24px;
+  padding: 40px 32px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+[hidden] { display: none !important; }
+
+/* ---------- Halaman awal ---------- */
+.sampul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.judul {
+  font-size: clamp(2.6rem, 9vw, 4.4rem);
+  line-height: 1.1;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+}
+
+.disclaimer {
+  max-width: 460px;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  opacity: 0.75;
+  white-space: pre-line;
+}
+
+.tombol-lanjut {
+  background: var(--merah);
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 44px;
+  border-radius: 14px;
+  margin-top: 8px;
+}
+
+.tombol-lanjut:hover {
+  background: var(--merah-hover);
+  border-color: transparent;
+}
+
+/* ---------- Halaman cerita ---------- */
+.isi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.teks {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.pilihan {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: auto;
+}
+
+button {
+  font: inherit;
+  color: var(--teks);
+  background: var(--aksen-gelap);
+  border: 2px solid transparent;
+  border-radius: 14px;
+  padding: 14px 18px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+button:hover { border-color: var(--aksen); }
+button:focus-visible { outline: 3px solid var(--aksen); outline-offset: 2px; }
+
+/* Tampilan saat ending */
+.kotak.ending .teks { text-align: center; }
+.kotak.ending .pilihan button {
+  background: var(--aksen);
+  color: #1d2230;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Fade singkat saat ganti halaman */
+.teks, .pilihan { transition: opacity 0.25s; }
+.kotak.ganti .teks,
+.kotak.ganti .pilihan { opacity: 0; }
+
+@media (max-width: 480px) {
+  .kotak { padding: 30px 20px; border-radius: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teks, .pilihan, button { transition: none; }
+}
