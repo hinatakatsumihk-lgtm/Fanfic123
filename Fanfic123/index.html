@@ -3,13 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jelaga antar Rembulan</title>
+  <title>Judul Fanfic Kamu</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="kotak" id="kotak">
-    <p class="teks" id="teks"></p>
-    <div class="pilihan" id="pilihan"></div>
+
+    <!-- Halaman awal: judul, disclaimer, tombol lanjut -->
+    <section class="sampul" id="sampul">
+      <h1 class="judul" id="judul"></h1>
+      <p class="disclaimer" id="disclaimer"></p>
+      <button class="tombol-lanjut" id="tombolLanjut">Lanjut</button>
+    </section>
+
+    <!-- Halaman cerita -->
+    <section class="isi" id="isi" hidden>
+      <p class="teks" id="teks"></p>
+      <div class="pilihan" id="pilihan"></div>
+    </section>
+
   </main>
 
   <script src="cerita.js"></script>
