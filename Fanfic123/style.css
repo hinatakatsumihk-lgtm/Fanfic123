@@ -10,7 +10,8 @@
   --merah-hover: #e53935;
 }
 
-html, body { height: 100%; }
+html { height: 100%; }
+body { min-height: 100%; }
 
 body {
   background: var(--latar);
@@ -27,6 +28,8 @@ body {
   width: 100%;
   max-width: 640px;
   min-height: 400px;
+  max-height: 90vh;
+  max-height: 90dvh;
   background: var(--kotak);
   border-radius: 24px;
   padding: 40px 32px;
@@ -83,6 +86,7 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+  min-height: 0;
   gap: 28px;
 }
 
@@ -90,6 +94,9 @@ body {
   font-size: 1.1rem;
   line-height: 1.8;
   white-space: pre-line;
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 .pilihan {

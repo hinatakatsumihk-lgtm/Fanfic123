@@ -27,6 +27,7 @@ function tampilkan(id) {
   setTimeout(() => {
     // Hapus isi halaman sebelumnya, ganti dengan yang baru
     elTeks.textContent = node.ending ? node.judul + "\n\n" + node.teks : node.teks;
+    elTeks.scrollTop = 0;
     elPilihan.innerHTML = "";
     kotak.classList.toggle("ending", !!node.ending);
 
